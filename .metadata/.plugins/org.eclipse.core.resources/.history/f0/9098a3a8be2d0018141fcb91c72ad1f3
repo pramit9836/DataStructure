@@ -1,0 +1,96 @@
+/**
+ * 
+ */
+package com.datastructure.queue;
+
+/**
+ * @author Pramit
+ *
+ */
+public class Queue<T extends Object> {
+	
+	T[] queue;
+	int front;
+	int rear;
+	int queueSize;
+	
+	@SuppressWarnings("unchecked")
+	public Queue(int length) {
+		// TODO Auto-generated constructor stub
+		queue = (T[])new Object[length];
+		front = -1;
+		rear = -1;
+		queueSize = length;
+	}
+	
+	public boolean insert(T data) {
+		
+		if(queue != null && rear < queueSize-1) {
+			rear++;
+			queue[rear] = data;
+			if(front == -1)
+				front++;
+		}else {
+			System.out.println("Queue overflow");
+			return false;
+		}
+		return true;
+	}
+	
+	public T remove() {
+		T removedData = null;
+		if(queue != null && front >= 0 && front < rear) {
+			removedData = queue[front];
+			front++;
+			rear = front -2;
+		}else if(front == rear && rear >= 0) {
+			removedData = queue[front];
+			front = -1;
+			rear = -1;
+		}else {
+			System.out.println("Queue underflow");
+			return removedData;
+		}
+		return removedData;
+	}
+	
+	public T front() {
+		T data =null;
+		if(front >= 0)
+			data = queue[front];
+		return data;
+	}
+	
+	public T rear() {
+		T data =null;
+		if(rear >= 0)
+			data = queue[rear];
+		return data;
+	}
+	public boolean isEmpty() {
+		boolean isEmpty = true;
+		if(front >= 0) {
+			isEmpty = false;
+		}
+		return isEmpty;
+	}
+	
+	public void printQueue() {
+		if(queue != null && front>=0 && rear >=0) {
+			if(front < rear) {
+				for(int i=front; i<=rear; i++) {
+					System.out.println(queue[i]);
+				}
+			}else {
+				for(int i=front; i<queueSize; i++) {
+					System.out.println(queue[i]);
+				}
+				for(int i=0; i<=rear; i++) {
+					System.out.println(queue[i]);
+				}
+			}
+			
+		}
+	}
+
+}

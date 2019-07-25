@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package com.learning.doubleneded.linekedlist.operations;
+
+/**
+ * @author Pramit
+ *
+ */
+public class LinkedListOperations {
+
+	/**
+	 * @param args
+	 */
+	
+	Node head;
+	Node tail;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		LinkedListOperations linkedListOperations = new LinkedListOperations(19);
+		
+
+	}
+
+}

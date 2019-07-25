@@ -1,0 +1,58 @@
+/**
+ * 
+ */
+package com.learning.dubly.linkedlist.operations;
+
+/**
+ * @author Pramit
+ *
+ */
+public class DoublyLinkedlistOperations {
+
+	/**
+	 * @param args
+	 */
+	
+	Node head;
+	Node tail;
+	
+	public boolean insertFirst(double data) {
+		
+		Node node = new Node(data);
+		if(head == null && tail==null) {
+			head = node;
+			tail = node;
+			return true;
+		}else {
+			head.setPrev(node);
+			node.setNext(head);
+			node.setPrev(head);
+			head = node;
+			return true;
+		}
+	}
+	
+	public void forwardPrinting() {
+		Node current = head;
+		while(current != null) {
+			System.out.println(current.getData());
+			current = current.getNext();
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		DoublyLinkedlistOperations doublyLinkedlistOperations = new DoublyLinkedlistOperations();
+		doublyLinkedlistOperations.insertFirst(10);
+		doublyLinkedlistOperations.insertFirst(77);
+		doublyLinkedlistOperations.insertFirst(45);
+		doublyLinkedlistOperations.insertFirst(23);
+		doublyLinkedlistOperations.insertFirst(87);
+		doublyLinkedlistOperations.insertFirst(56);
+		
+		doublyLinkedlistOperations.forwardPrinting();
+
+	}
+
+}

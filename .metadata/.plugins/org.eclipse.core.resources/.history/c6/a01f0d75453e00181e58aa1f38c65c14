@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package com.learning.dubly.linkedlist.operations;
+
+/**
+ * @author Pramit
+ *
+ */
+public class DoublyLinkedlistDeleteOperations {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

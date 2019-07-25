@@ -1,0 +1,69 @@
+/**
+ * 
+ */
+package com.learning.doubleneded.linekedlist.operations;
+
+/**
+ * @author Pramit
+ *
+ */
+public class LinkedListOperations {
+
+	/**
+	 * @param args
+	 */
+	
+	Node head;
+	Node tail;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		LinkedListOperations linkedListOperations = new LinkedListOperations();
+		
+		linkedListOperations.pushNodeAtFirst(19);
+		linkedListOperations.pushNodeAtFirst(77);
+		linkedListOperations.pushNodeAtFirst(56);
+		
+		linkedListOperations.printListHead();
+		
+		linkedListOperations.pushNodeAtEnd(34);
+		linkedListOperations.pushNodeAtEnd(15);
+		
+
+	}
+	
+	public boolean pushNodeAtFirst(int data) {
+		Node node = new Node(data);
+		if(head != null) {
+			node.setNext(head);
+			head = node;
+		}else {
+			head = node;
+			tail = node;
+		}
+		
+		return true;
+	}
+	
+	public boolean pushNodeAtEnd(int data) {
+
+		Node node = new Node(data);
+		if(tail != null) {
+			tail.setNext(node);
+			tail = node;
+		}else {
+			head = node;
+			tail = node;
+		}
+		return true;
+	}
+	
+	public void printListHead() {
+		Node current = head;
+		while (current != null) {
+			System.out.println(current.getData());
+			current = current.getNext();
+		}
+	}
+
+}

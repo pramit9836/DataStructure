@@ -1,0 +1,49 @@
+/**
+ * 
+ */
+package com.datastructure.queue;
+
+/**
+ * @author Pramit
+ *
+ */
+public class Queue<T extends Object> {
+	
+	T[] queue;
+	int front;
+	int rear;
+	int queueSize;
+	
+	@SuppressWarnings("unchecked")
+	public Queue(int length) {
+		// TODO Auto-generated constructor stub
+		queue = (T[])new Object[length];
+		front = -1;
+		rear = -1;
+		queueSize = length;
+	}
+	
+	
+	public boolean insert(T data) {
+		
+		if(queue != null && rear < queueSize-1) {
+			rear++;
+			queue[rear] = data;
+			if(front == -1)
+				front++;
+		}else {
+			System.out.println("Queue overflow");
+			return false;
+		}
+		return true;
+	}
+	
+	public void printQueue() {
+		if(queue != null && front>=0 && rear >=0) {
+			for(int i=front; i<=rear; i++) {
+				System.out.println(queue[i]);
+			}
+		}
+	}
+
+}

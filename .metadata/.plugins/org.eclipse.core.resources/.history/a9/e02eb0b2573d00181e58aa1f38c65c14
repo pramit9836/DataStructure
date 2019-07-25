@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.learning.dubly.linkedlist.operations;
+
+/**
+ * @author Pramit
+ *
+ */
+public class Node {
+
+}

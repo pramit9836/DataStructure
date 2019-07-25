@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.learning.doubleneded.linekedlist.operations;
+
+/**
+ * @author Pramit
+ *
+ */
+public class Node {
+
+}

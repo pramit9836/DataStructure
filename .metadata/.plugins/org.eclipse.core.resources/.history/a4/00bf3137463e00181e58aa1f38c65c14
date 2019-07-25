@@ -1,0 +1,52 @@
+/**
+ * 
+ */
+package com.learning.dubly.linkedlist.operations;
+
+import java.util.ArrayList;
+
+/**
+ * @author Pramit
+ *
+ */
+public class DoublyLinkedlistDeleteOperations {
+
+	/**
+	 * @param args
+	 */
+	Node head;
+	Node tail;
+	public boolean bulkInsertion(ArrayList<Double> dataList) {
+		
+		for(double data : dataList) {
+			Node node = new Node(data);
+			Node current = tail;
+			if(head == null && tail == null) {
+				head = tail = node;
+			}else {
+				node.setPrev(current);
+				current.setNext(node);
+				tail = node;
+			}
+			return true;
+		}
+		
+		return false;
+	}
+	
+	
+	public void forwardPrint() {
+		if(head != null && tail != null) {
+			Node current = head;
+			while(current != null) {
+				System.out.println(current.getData());
+				current = current.getNext();
+			}
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
